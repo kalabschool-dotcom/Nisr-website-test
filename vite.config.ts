@@ -10,6 +10,6 @@ export default defineConfig({
   // GitHub Pages expects the site to be served from `/Nisr-website/`.
   base: '/Nisr-website/',
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
   },
 });
