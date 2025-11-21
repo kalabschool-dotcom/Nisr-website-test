@@ -1,4 +1,5 @@
 import { SearchIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../button";
 import { Input } from "../input";
 import iconNotification from "../../../assets/images/iconamoon-notification.svg";
@@ -7,6 +8,12 @@ import iconChat from "../../../assets/images/ph-chat-text.svg";
 import iconProfile from "../../../assets/images/iconamoon-profile-bold.svg";
 
 export const FashionSection = (): JSX.Element => {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/search");
+  };
+
   return (
     <header className="w-full bg-white py-5 px-8 relative">
       <div className="flex items-center justify-between gap-8">
@@ -24,7 +31,10 @@ export const FashionSection = (): JSX.Element => {
               placeholder="Search"
               className="w-full h-[45px] pl-11 pr-[100px] rounded-[50px] border border-black bg-white [font-family:'Nunito',Helvetica] font-normal text-[#bcb8b8] text-2xl"
             />
-            <Button className="absolute right-0 top-0 h-[45px] w-[89px] bg-[#fa6bad9e] hover:bg-[#fa6bad] rounded-[50px] [font-family:'Nunito',Helvetica] font-semibold text-black text-base">
+            <Button
+              onClick={handleSearch}
+              className="absolute right-0 top-0 h-[45px] w-[89px] bg-[#fa6bad9e] hover:bg-[#fa6bad] rounded-[50px] [font-family:'Nunito',Helvetica] font-semibold text-black text-base"
+            >
               Search
             </Button>
           </div>
